@@ -2,7 +2,7 @@
 
 	<!--<Import Project="StaticAssets\StaticAssets.targets" />-->
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFrameworks>net6.0</TargetFrameworks>
 		<IsPackable>true</IsPackable>
 		<OutputType>Library</OutputType>
 		<Nullable>enable</Nullable>
@@ -11,7 +11,7 @@
 		<PackageProjectUrl>https://github.com/stiankroknes/VisNetwork.Blazor</PackageProjectUrl>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<IncludeSymbols>true</IncludeSymbols>
-		<Description>Blazor component for vis.js/vis-network.</Description>
+		<Description>Blazor component for vis.js/vis-network. Fork for MDD4All.de - done by oalt</Description>
 		<MinVerTagPrefix>v</MinVerTagPrefix>
 		<MinVerMinimumMajorMinor>1.0</MinVerMinimumMajorMinor>
 		<MinVerDefaultPreReleasePhase>preview</MinVerDefaultPreReleasePhase>
@@ -20,24 +20,19 @@
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<Deterministic>true</Deterministic>
 		<ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
-		<AssemblyName>$(MSBuildProjectName.Replace("-dev", ""))</AssemblyName>
-		<RootNamespace>$(MSBuildProjectName.Replace("-dev", ""))</RootNamespace>
+		<AssemblyName>MDD4All.VisNetwork.Blazor</AssemblyName>
+		<RootNamespace>VisNetwork.Blazor</RootNamespace>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>MDD4All_Github.snk</AssemblyOriginatorKeyFile>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
 		<RazorLangVersion>6.0</RazorLangVersion>
 	</PropertyGroup>
 
-	<!--<PropertyGroup Condition="'$(TargetFramework)' == 'net7.0'">
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net7.0'">
 		<RazorLangVersion>7.0</RazorLangVersion>
-	</PropertyGroup>-->
-
-	<ItemGroup>
-	  <Compile Remove="Models\**" />
-	  <Content Remove="Models\**" />
-	  <EmbeddedResource Remove="Models\**" />
-	  <None Remove="Models\**" />
-	</ItemGroup>
+	</PropertyGroup>
 
 	<ItemGroup>
 	  <Compile Remove="JSModule.Methods.cs" />
@@ -68,18 +63,14 @@
 		<PackageReference Include="MinVer" Version="4.1.0" PrivateAssets="All" />
 	</ItemGroup>
 
-	<!--<ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
 		<PackageReference Include="Microsoft.AspNetCore.Components" Version="7.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.0" />
-	</ItemGroup>-->
+	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
 		<PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.8" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.8" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\..\..\VisNetwork.Blazor.Models\src\VisNetwork.Blazor.Models\VisNetwork.Blazor.Models-dev.csproj" />
 	</ItemGroup>
 
 </Project>
