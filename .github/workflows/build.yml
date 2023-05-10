@@ -47,6 +47,6 @@ jobs:
     - name: Upload artifact(s)
       uses: actions/upload-artifact@v3
       with:
-        name: ${{env.PROJECT_NAME}}.${{env.VERSION}}
+        name: MDD4All.${{env.PROJECT_NAME}}.${{env.VERSION}}
         path: ./Output/*.nupkg
       

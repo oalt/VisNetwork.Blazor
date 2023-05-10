@@ -64,8 +64,8 @@
 	</Target>-->
 
 	<ItemGroup>
+		<PackageReference Include="MDD4All.VisNetwork.Blazor.Models" Version="2.0.1.5" />
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-		<PackageReference Include="VisNetwork.Blazor.Models" Version="2.0.0.3" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
