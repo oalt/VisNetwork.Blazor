@@ -20,7 +20,7 @@ public partial class JSModule : IAsyncDisposable
 
     private Task<IJSObjectReference> Module => moduleTask ??= jsRuntime.InvokeAsync<IJSObjectReference>("import", ModuleFileName).AsTask();
 
-    public string ModuleFileName => $"./_content/VisNetwork.Blazor/BlazorVisNetwork.js?v={versionProvider.Version}";
+    public string ModuleFileName => $"./_content/MDD4All.VisNetwork.Blazor/BlazorVisNetwork.js?v={versionProvider.Version}";
 
     private async ValueTask InvokeVoidAsync(string identifier, params object[] args)
     {
