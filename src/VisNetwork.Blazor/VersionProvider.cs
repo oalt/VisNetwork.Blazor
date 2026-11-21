@@ -8,7 +8,7 @@ namespace VisNetwork.Blazor
         string Version { get; }
     }
 
-    internal class VersionProvider : IVersionProvider
+    internal sealed class VersionProvider : IVersionProvider
     {
         private readonly Lazy<Version> version;
 

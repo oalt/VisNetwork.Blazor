@@ -20,8 +20,8 @@
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<Deterministic>true</Deterministic>
 		<ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
-		<AssemblyName>$(MSBuildProjectName.Replace("-dev", ""))</AssemblyName>
-		<RootNamespace>$(MSBuildProjectName.Replace("-dev", ""))</RootNamespace>
+		<AssemblyName>MDD4All.VisNetwork.Blazor</AssemblyName>
+		<RootNamespace>VisNetwork.Blazor</RootNamespace>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
@@ -74,8 +74,8 @@
 	</ItemGroup>-->
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
-		<PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.8" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.8" />
+		<PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.25" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.25" />
 	</ItemGroup>
 
 	<ItemGroup>
